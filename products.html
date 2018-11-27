@@ -1,0 +1,286 @@
+'<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fade</title>
+  </head>
+  <link rel="stylesheet" href="products.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1 {font-family: "Raleway", Arial, sans-serif}
+  h1 {letter-spacing: 6px}
+  h2 {letter-spacing: 3px}
+  .w3-row-padding img {margin-bottom: 12px}
+  </style>
+  <style>
+  .center {
+      float: left;
+
+  }
+
+  .myButtonBack {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+
+  }
+  .myButton {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+
+      float: left;
+
+  }
+
+  .myButtonHelp {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+  }
+  </style>
+
+  <body>
+    <div class="w3-content" style="max-width:1500px">
+
+    <div>
+    <header class="w3-panel w3-center" style="padding:20px 16px">
+      <a href='new_home.html'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+          <div>
+
+          </div>
+
+      </a>
+
+      <div class="w3-bar w2-border w3-opacity myButtonBack">
+        <button onclick="goBack()">Go Back</button>
+      </div>
+
+      <div class="w3-bar w2-border w3-opacity myButtonHelp">
+        <form action="help.html">
+          <input type="submit" value="Help!" />
+        </form>
+      </div>
+
+      <!-- LOGO -->
+
+    </div>
+
+
+
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+
+    <button onclick="complete()" style="float: right;">See Your Completed Hairstyle Regime</button>
+
+    <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+
+
+    function complete() {
+      if(localStorage.getItem("favorites")===null){
+        window.alert("Choose some Favorites!");
+      }
+      else{
+        var curStyle = getUrlVars()["style"];
+        localStorage.setItem("currentStyle", curStyle);
+        location.href = "favorite_screen.html";
+      }
+    }
+    </script>
+    <h1>Products to Consider<h1>
+    <p>Choose Some Products For Your Favorites List!</p>
+
+    <div class="tab">
+      <button class="tablinks" id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
+      <button class="tablinks" onclick="openCity(event, 'sprays')">HairSprays</button>
+    </div>
+
+<!-- Tab content -->
+    <div id="templatedProjects" class="tabcontent">
+
+
+    </div>
+    <div id="sprays" class="tabcontent">
+
+    </div>
+
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="project" id="project{{index}}">
+        <fieldset>
+          <img src="{{image}}" alt="Lorem Pixel image" class="img" height="150" width="150">
+          <p><h4>{{name}}</h4></p>
+          <p>
+            <h5>{{description}}</h5>
+          </p>
+          <div class="w3-bar w2-border w3-opacity myButton">
+            <button type='button' class='hello' id='{{index}}'>Add To Favorites</button>
+            <button onclick=" window.open('{{link}}','_blank')"> Details</button>
+
+          </div>
+        </fieldset>
+      </div>
+    </script>
+
+    <div id="templatedProjects2">
+        <!-- we will inject templated project HTML code into here -->
+    </div>
+
+
+
+  </body>
+
+  <script src="handlebars-v4.0.12.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script>
+    //used to get the response from previous page and then populate the handle bars thing
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+    }
+    var style = getUrlVars()["style"];
+    console.log(style);
+
+    //hair style data
+    var complexData = [
+    {'image':'images/products/gatsbymovingrubber.jpg', 'name': 'Gatsyby Moving Rubber', 'style':'wax', 'link': 'https://amazon.com/gatsby', 'index': 0, 'description': 'good for asian hair!', styles:['Cropped+Fringe','undercut','Long+Fringe+Haircut','Long+Hair+Undercut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut','Slicked+Back+Cut'] },
+    {'image':'images/products/suavecito.jpg','name': 'Suavecito Pomade Firm Hold',  'style':'wax','link': 'https://www.amazon.com/Suavecito-Pomade-Firme-Strong-Hold/dp/B00BFJGJLE/ref=sr_1_4_a_it?ie=UTF8&qid=1541727424&sr=8-4&keywords=hair%2Bstyling%2Bproducts%2Bfor%2Bmen&th=1', 'index': 1, 'description': 'Good for long-time hold!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut', 'Long+Hair+Undercut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length']},
+    {'image':'images/products/gatsbymovingrubber.jpg','name': 'Gatsby Moving Rubber Spiky Edge Wax',  'style':'wax','link': 'https://www.amazon.com/Gatsby-Moving-Rubber-Spiky-2-8oz/dp/B005M2C6PS/ref=pd_lpo_vtph_121_bs_t_1?_encoding=UTF8&psc=1&refRID=MAKC9KS7KK53Q0A19EA5', 'index': 2, 'description': 'Great for styling and holding volume for short hair!',styles:['Cropped+Fringe','undercut', 'Long+Hair+Undercut','Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length']},
+    {'image':'images/products/hanzdefuko.jpg','name': 'Hanz De Fuko Claymation',  'style':'wax','link': 'https://www.amazon.com/Hanz-de-Fuko-Claymation/dp/7178679743', 'index': 3, 'description': 'Most popular right now, supreme hold for short to medium length!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length']},
+    {'image':'images/products/oribe.jpg','name': 'Oribe Hair Spray', 'style':'hairspray', 'link': 'https://www.amazon.com/Oribe-Superfine-Spray-Unisex-Ounce/dp/B00203KP8C/ref=as_at/?creativeASIN=B00203KP8C&linkCode=w50&tag=gqgensqua-20&imprToken=bhvROW07gBF6lvLS86D4HA&slotNum=7&th=1', 'index': 4, 'description': 'Ultra dray spray that offers medium hold, but no dampness!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length']},
+    {'image':'images/products/americanfiber.jpeg','name': 'American Crew Fiber',  'style':'wax','link': 'https://www.amazon.com/American-Crew-Fiber-3-Oz/dp/B0007CXWC4/ref=sr_1_5_a_it?ie=UTF8&qid=1541727319&sr=8-5&keywords=men+hair+products', 'index': 5, 'description': 'Offers high hold for normal length hair!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length','Slicked+Back+Cut','Long+Fringe+Haircut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut']},
+    {'image':'images/products/loreal.jpg','name': 'LOreal Control Spray',  'style':'hairspray','link': 'https://www.amazon.com/LOreal-Paris-Advanced-Hairstyle-Hairspray/dp/B00ID1I2Z8/ref=sr_1_6_s_it?s=beauty&ie=UTF8&qid=1541728402&sr=1-6&keywords=hair+spray', 'index': 6, 'description': 'An affordable spray that offers quick, strong hold',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length','Slicked+Back+Cut','Long+Fringe+Haircut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut']}
+
+    ]
+
+    //tabs code
+    function openCity(evt, cityName) {
+    // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    //used to populate the page with products
+    $(document).ready(function() {
+      console.log('hello world');
+      document.getElementById("wax").click();
+
+      localStorage.clear();
+
+      // compile the template
+      var source   = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#templatedProjects");
+
+      // now iterate through the complexData list and keep appending:
+      for (var i = 0; i < complexData.length; i++) {
+        var curData = complexData[i];
+        for(var x=0; x<curData['styles'].length;x++){
+          if(curData['styles'][x] == style){
+            if(curData['style'] == 'wax'){
+              var curHtml = template(curData);
+              parentDiv.append(curHtml);
+            }
+          }
+        }
+      }
+
+      var parentDiv2 = $("#sprays");
+      for (var i = 0; i < complexData.length; i++) {
+        var curData = complexData[i];
+        for(var x=0; x<curData['styles'].length;x++){
+          if(curData['styles'][x] == style){
+            if(curData['style'] == 'hairspray'){
+              var curHtml = template(curData);
+              parentDiv2.append(curHtml);
+            }
+          }
+        }
+      }
+
+
+      //add functionality to the favorite button
+      $(".hello").click(function(event) {
+        var id = event.target.id;
+        console.log($("#"+id).text());
+
+        if($("#"+id).text() =="Add To Favorites") {
+          $("#"+id).html('Unfavorite');
+          window.alert("Added to Favorites!");
+          if(localStorage.getItem("favorites")===null) {
+            var faves = [id];
+            localStorage.setItem("favorites", JSON.stringify(faves));
+          }
+          else {
+            var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+            console.log(storedFavorites);
+
+            storedFavorites.push(id);
+            localStorage.setItem("favorites", JSON.stringify(storedFavorites));
+          }
+        }
+        else {
+            $("#"+id).html('Add To Favorites');
+
+            var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+            console.log(storedFavorites);
+            storedFavorites.splice( storedFavorites.indexOf(id), 1 );
+            localStorage.setItem("favorites", JSON.stringify(storedFavorites));
+
+        }
+
+
+      });
+
+    });
+
+
+  </script>
+
+
+
+
+
+</html>

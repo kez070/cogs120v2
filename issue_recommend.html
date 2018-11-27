@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class='issue_name'>Dandruff</title>
+  </head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1 {font-family: "Raleway", Arial, sans-serif}
+  h1 {letter-spacing: 6px}
+  h2 {letter-spacing: 3px}
+  .w3-row-padding img {margin-bottom: 12px}
+  </style>
+  <style>
+  .center {
+      float: left;
+
+  }
+
+  .myButtonBack {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+
+  }
+
+  .myButtonHelp {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+  }
+  </style>
+
+
+  <body>
+    <div class="w3-content" style="max-width:1500px">
+
+    <div>
+    <header class="w3-panel w3-center" style="padding:20px 16px">
+      <a href='new_home.html'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+          <div>
+
+          </div>
+
+      </a>
+
+      <div class="w3-bar w2-border w3-opacity myButtonBack">
+        <form action="issue.html">
+          <input type="submit" value="Back"/>
+        </form>
+      </div>
+
+      <div class="w3-bar w2-border w3-opacity myButtonHelp">
+        <form action="help.html">
+          <input type="submit" value="Help!" />
+        </form>
+      </div>
+
+      <!-- LOGO -->
+
+    </div>
+
+    <h1 id='issue_name1'>Dandruff</h1>
+
+    <div id="templatedDesc">
+        <!-- we will inject templated project HTML code into here -->
+    </div>
+    <script id="desciption_template" type="text/x-handlebars-template">
+        <h2>{{description}}</h2>
+    </script>
+    <h4>Below are some Products that could help</h4>
+
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="project" id="project{{index}}">
+        <fieldset>
+          <img src="{{image}}" alt="Lorem Pixel image" class="img" height="150" width="150">
+          <p><h4>{{name}}</h4></p>
+          <p>
+            <h5>{{description}}</h5>
+            <br>{{description1}}</br>
+            <br>{{description2}}</br>
+            <br>{{description3}}</br>
+          </p>
+          <button onclick=" window.open('{{link}}','_blank')"> Details</button>
+
+        </fieldset>
+      </div>
+    </script>
+
+    <div id="templatedProjects">
+        <!-- we will inject templated project HTML code into here -->
+    </div>
+
+
+
+  </body>
+
+  <script src="handlebars-v4.0.12.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script>
+    //used to get the response from previous page and then populate the handle bars thing
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+    }
+    var issue = getUrlVars()["issue"];
+
+    issue_translate = {'hairloss':'Hairloss','dandruff':'Dandruff','lice':"Lice",'dry':'Dry Hair','oily':'Oily Hair','dull':'Dull Hair','damaged':'Damaged Hair/Split Ends'};
+
+    $("#issue_name1").text(issue_translate[issue]);
+    //hair style data
+    var complexData = [
+      {'image':'images/troubles/lice.jpg','name': 'Tree Oil Lice Shampoo','issue':'Lice', 'link': 'https://www.amazon.com/Pure-Tree-Shampoo-Anti-Dandruff-Anti-Bacterial/dp/B0099EHM86/ref=sr_1_3_a_it?ie=UTF8&qid=1541727742&sr=8-3&keywords=lice%2Bhair%2Bproduct%2Bmen&th=1', 'index': 1, 'description': 'Anti-lice shampoo for preventing lice', 'description1':'Use a fine comb to get rid of the lice. ', 'description2':'Wash household items and towels in hot water.', 'description3':'Do not share any hair tools with infected person.'},
+      {'image':'images/troubles/dandruff.jpg','name': 'Nizoral A-D Anti-Dandruff Shampoo', 'issue':'Dandruff','link': 'https://www.amazon.com/Nizoral-D-Anti-Dandruff-Shampoo-Fl/dp/B0000Y3CRY', 'index': 2, 'description': 'Shampoo that kills dandruff', 'description1':'Shampoo frequently and do longer lather.', 'description2':'Use warm water to get rid of the thick scale you may have.', 'description3':'Consider using over-the-counter dandruff shampoos.'},
+      {'image':'images/troubles/hairloss.jpg','name': 'Thumos Hair Loss Shampoo', 'issue':'Hairloss','link': 'https://www.amazon.com/Male-Hair-Loss-Shampoo-Men/dp/B074GR71JL', 'index': 3, 'description': 'Shampoo that prevents hair loss and restores volume', 'description1':'Try your best to not roughly dry your hair.', 'description2':'Check your diet for a healthier option.', 'description3':'Address phycological issues you may be facing'},
+      {'image':'images/troubles/dryhair.jpg','name': 'Redken Moisturizing Shampoo', 'issue':'Dry Hair','link': 'https://www.amazon.com/dp/B0014DYEAE/?tag=gentsgaze-20', 'index': 4, 'description': 'Great for moisturizing follicles and scalp!', 'description1':'Use cool air for drying your hair (airdry)', 'description2':'Try not to wash hair too much', 'description3':'Avoid use of chemicals (hair dye/bleach)'},
+      {'image':'images/troubles/oilyhair.jpg','name': 'Kerastase Anti Oiliness Shampoo', 'issue':'Oily Hair','link': 'https://www.amazon.com/Homme-Kerastase-Capital-Anti-Oiliness-Shampoo/dp/B01M1JV4PR/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=manlinesskit-20&linkId=21cd0cb339b46d122a16983700a36cfc', 'index': 4, 'description': 'Great for reducing oiliness', 'description1':'Shower once a day', 'description2':'Condition hair less frequently', 'description3':'Blow dry with cool air'},
+      {'image':'images/troubles/dullhair.jpg','name': 'Silk18 Treatment For Damaged Hair', 'issue':'Dull Hair','link': 'https://www.amazon.com/Natural-Conditioner-Sulfate-Treatment-Silk/dp/B00L1KFQKC/ref=sr_1_4_a_it?ie=UTF8&qid=1541728076&sr=8-4&keywords=split%2Bends%2Bhair%2Btreatment&th=1', 'index': 5, 'description': 'Conditioner that treats dry, damaged hair!', 'description1':'Try to use less dye products', 'description2':'Wash hair less for natural oil', 'description3':'Use conditioner more frequently'},
+      {'image':'images/troubles/damagedhair.jpg','name': 'Silk18 Natural Hair Conditioner', 'issue':'Damaged Hair/Split Ends','link': 'https://www.amazon.com/Natural-Conditioner-Sulfate-Treatment-Silk/dp/B00L1KFQKC/ref=sr_1_4_a_it?ie=UTF8&qid=1541728076&sr=8-4&keywords=split%2Bends%2Bhair%2Btreatment&th=1', 'index': 6, 'description': 'Conditioner that treats dry, damaged hair!', 'description1':'Check your body health and improve', 'description2':'Try not to expose it too much under sun/pool', 'description3':'Avoid using irons or hot blow drying'}
+
+    ]
+
+    var issueData = [
+      {'name': 'Lice', 'description':'eweww'}
+    ]
+
+
+
+    $(document).ready(function() {
+      console.log('hello world');
+
+      // compile the template
+      var source   = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#templatedProjects");
+
+      // now iterate through the complexData list and keep appending:
+      for (var i = 0; i < complexData.length; i++) {
+        var curData = complexData[i];
+        if(issue_translate[issue] == curData['issue']){
+            var curHtml = template(curData);
+            parentDiv.append(curHtml);
+        }
+      }
+    });
+
+
+  </script>
+</html>

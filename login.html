@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> Login Now! </title>
+  </head>
+  <body>
+    <center>
+      <h2> LOGIN HERE </h2>
+      <form action="new_home.html" >
+          <table>
+            <tr>
+              <td> Username : </td>
+              <td>
+                <input id='user' type="text" name="user">
+              </td>
+
+            </tr>
+              <tr>
+                <td> Password : </td>
+                <td>
+                  <input id='pass' type="password" name="pass">
+              </tr>
+          </table>
+          <button id='hello' type='button' id='submit'>Login</button>
+      </form>
+    </center>
+
+
+  </body>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+<script type="text/javascript">
+document.getElementById("hello").onclick = function () {
+    var user = document.getElementById('user').value;
+    var pass = document.getElementById('pass').value
+    if(user == "user"){
+      if(pass == "1234"){
+        location.href = "new_home.html";
+
+      }
+    }
+};
+
+</script>
+
+</html>

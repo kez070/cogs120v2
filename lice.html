@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lice</title>
+  </head>
+  <body>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <h1>Lice</h1>
+    <h4>Below are some Products that could help</h4>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="project" id="project{{index}}">
+        <fieldset>
+          <img src="{{image}}" alt="Lorem Pixel image" class="img" height="150" width="150">
+          <p><h4>{{name}}</h4></p>
+          <p>
+            <h5>{{description}}</h5>
+          </p>
+          <form action="{{link}}">
+            <input type="submit" value="Details" />
+          </form>
+        </fieldset>
+      </div>
+    </script>
+
+    <div id="templatedProjects">
+        <!-- we will inject templated project HTML code into here -->
+    </div>
+
+
+
+  </body>
+
+  <script src="handlebars-v4.0.12.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script>
+    //used to get the response from previous page and then populate the handle bars thing
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+    }
+    var style = getUrlVars()["style"];
+    console.log(style);
+
+    //hair style data
+    var complexData = [
+      {'name': 'Tree Oil Lice Shampoo', 'link': 'https://www.amazon.com/Pure-Tree-Shampoo-Anti-Dandruff-Anti-Bacterial/dp/B0099EHM86/ref=sr_1_3_a_it?ie=UTF8&qid=1541727742&sr=8-3&keywords=lice%2Bhair%2Bproduct%2Bmen&th=1', 'index': 1, 'description': 'Anti-lice shampoo for preventing lice'},
+      {'name': 'Nizoral A-D Anti-Dandruff Shampoo', 'link': 'https://www.amazon.com/Nizoral-D-Anti-Dandruff-Shampoo-Fl/dp/B0000Y3CRY', 'index': 2, 'description': 'Shampoo that kills dandruff'},
+      {'name': 'Thumos Hair Loss Shampoo', 'link': 'https://www.amazon.com/Male-Hair-Loss-Shampoo-Men/dp/B074GR71JL', 'index': 3, 'description': 'Shampoo that prevents hair loss and restores volume'},
+      {'name': 'Redken Moisturizing Shampoo', 'link': 'https://www.amazon.com/dp/B0014DYEAE/?tag=gentsgaze-20', 'index': 4, 'description': 'Great for moisturizing follicles and scalp!'},
+      {'name': 'Kerastase Anti Oiliness Shampoo', 'link': 'https://www.amazon.com/Homme-Kerastase-Capital-Anti-Oiliness-Shampoo/dp/B01M1JV4PR/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=manlinesskit-20&linkId=21cd0cb339b46d122a16983700a36cfc', 'index': 4, 'description': 'Great for reducing oiliness'},
+      {'name': 'Silk18 Treatment For Damaged Hair', 'link': 'https://www.amazon.com/Natural-Conditioner-Sulfate-Treatment-Silk/dp/B00L1KFQKC/ref=sr_1_4_a_it?ie=UTF8&qid=1541728076&sr=8-4&keywords=split%2Bends%2Bhair%2Btreatment&th=1', 'index': 5, 'description': 'Conditioner that treats dry, damaged hair!'}
+
+    ]
+
+
+    $(document).ready(function() {
+      console.log('hello world');
+
+      // compile the template
+      var source   = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#templatedProjects");
+
+      // now iterate through the complexData list and keep appending:
+      for (var i = 0; i < complexData.length; i++) {
+        var curData = complexData[i];
+        var curHtml = template(curData);
+        parentDiv.append(curHtml);
+        }
+    });
+
+
+  </script>
+</html>

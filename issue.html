@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="issue.css" media="all" />
+  <head>
+    <title>Whats the Issue?</title>
+  </head>
+  <style>
+  .center {
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1 {font-family: "Raleway", Arial, sans-serif}
+  h1 {letter-spacing: 6px}
+  h2 {letter-spacing: 3px}
+  .w3-row-padding img {margin-bottom: 12px}
+  </style>
+  <style>
+  .left {
+      float: left;
+
+  }
+
+  .myButtonBack {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+
+  }
+
+  .myButtonHelp {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+  }
+  </style>
+
+
+  <body>
+    <div class="w3-content" style="max-width:1500px">
+
+    <div>
+    <header class="w3-panel w3-center" style="padding:20px 16px">
+      <a href='new_home.html'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='left'>
+          <div>
+
+          </div>
+
+      </a>
+
+      <div class="w3-bar w2-border w3-opacity myButtonBack">
+        <form action="new_home.html">
+          <input type="submit" value="Back"/>
+        </form>
+      </div>
+
+      <div class="w3-bar w2-border w3-opacity myButtonHelp">
+        <form action="help.html">
+          <input type="submit" value="Help!" />
+        </form>
+      </div>
+
+      <!-- LOGO -->
+
+    </div>
+  </div>
+
+<center>
+    <h1 >
+      Whats the Issue?</h1>
+    <p>
+
+      Choose an Issue</p>
+    </Center>
+
+
+    <div class="btn-group w3-bar w2-border w3-opacity myButtonHelp" class='center'>
+      <button class='center' id='hairloss'>Hair Loss</button>
+      <button class='center'id='dandruff'>Dandruff</button>
+      <button class='center'id='lice'>Lice</button>
+      <button class='center'id='dry'>Dry Hair</button>
+      <button class='center'id='oily'>Oily Hair</button>
+      <button class='center'id='dull'>Dull Hair</button>
+      <button class='center'id='damaged'>Damaged Hair/Split Ends</button>
+    </div>
+
+    <!-- script to enable buttons -->
+    <script type="text/javascript">
+    document.getElementById("hairloss").onclick = function () {
+        location.href = "issue_recommend.html?issue=hairloss";
+    };
+    document.getElementById("dandruff").onclick = function () {
+        location.href = "issue_recommend.html?issue=dandruff";
+    };
+    document.getElementById("lice").onclick = function () {
+        location.href = "issue_recommend.html?issue=lice";
+    };
+    document.getElementById("dry").onclick = function () {
+        location.href = "issue_recommend.html?issue=dry";
+    };
+    document.getElementById("oily").onclick = function () {
+        location.href = "issue_recommend.html?issue=oily";
+    };
+    document.getElementById("dull").onclick = function () {
+        location.href = "issue_recommend.html?issue=dull";
+    };
+    document.getElementById("damaged").onclick = function () {
+        location.href = "issue_recommend.html?issue=damaged";
+    };
+
+  </script>
+
+  </body>
+</html>

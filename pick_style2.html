@@ -1,0 +1,123 @@
+<html>
+<title>Hair 4 U</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+h2 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<style>
+.center {
+    float: left;
+
+}
+
+.myButtonBack {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: left;
+
+}
+
+.myButtonHelp {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: left;
+}
+</style>
+<body>
+
+
+<!-- !PAGE CONTENT! -->
+
+<div class="w3-content" style="max-width:1500px">
+
+<div>
+<header class="w3-panel w3-center" style="padding:20px 16px">
+  <a href='new_home.html'>
+    <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+      <div>
+
+      </div>
+
+  </a>
+
+  <div class="w3-bar w2-border w3-opacity myButtonBack">
+    <form action="new_home.html">
+      <input type="submit" value="Back"/>
+    </form>
+  </div>
+
+  <div class="w3-bar w2-border w3-opacity myButtonHelp">
+    <form action="help.html">
+      <input type="submit" value="Help!" />
+    </form>
+  </div>
+
+  <!-- LOGO -->
+
+</div>
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity " style="padding:0px 16px">
+  <body>
+    <h1>Pick a Style!</h1>
+    <h3>
+    <p>Tell us about you...</p>
+    <p>
+      and wel'll recommend haristyles, products and more!
+    </p>
+    </h2>
+    <form action="recommend.html" method='get'>
+      <fieldset>
+            <h3>Age: <input type='number' name='age'required/></h4>
+        <p>
+        </p>
+          <h3>Head Size:</h3>
+        <p>
+        </p>
+        <h5>
+        <input type="radio" name="size" value="Small" required> Small<br>
+        <input type="radio" name="size" value="Med" required> Medium<br>
+        <input type="radio" name="size" value="Large" required> Large<br>
+        </h5>
+
+        <p>
+          <h3>Current Hair Length:</h3>
+        </p>
+        <h5>
+        <input type="radio" name="length" value="Short" required> Short<br>
+        <input type="radio" name="length" value="Medium" required> Medium<br>
+        <input type="radio" name="length" value="Long" required> Long<br>
+        </h5>
+
+        <p>
+          <h3>Hair Texture:</h3>
+        </p>
+        <h5>
+        <input type="radio" name="texture" value="Small" required> Thin<br>
+        <input type="radio" name="texture" value="Big" required> Wavy<br>
+        <input type="radio" name="texture" value="Med" required> Thick<br>
+        <input type="radio" name="texture" value="Unknown" required> Im Not sure<br>
+        </h5>
+
+        <p>
+        <input type="submit" value="Get Your Recommendations!" class="w3-bar-item w3-button w3-light-grey w3-border" />
+        </p>
+      </fieldset>
+    </form>
+</body>
+</html>

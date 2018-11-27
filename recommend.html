@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recommendations</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="recommend.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1 {font-family: "Raleway", Arial, sans-serif}
+  h1 {letter-spacing: 6px}
+  h2 {letter-spacing: 3px}
+  .w3-row-padding img {margin-bottom: 12px}
+  </style>
+  <style>
+  .center {
+      float: left;
+
+  }
+
+  .myButtonBack {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+
+  }
+
+  .myButtonHelp {
+      padding: 10px;
+      display:block;
+      background-color: white;
+      color: white;
+      text-align:center;
+      position: auto;
+      float: left;
+  }
+  </style>
+  <body>
+
+    <div class="w3-content" style="max-width:1500px">
+
+    <div>
+    <header class="w3-panel w3-center" style="padding:20px 16px">
+      <a href='new_home.html'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+          <div>
+
+          </div>
+
+      </a>
+
+      <div class="w3-bar w2-border w3-opacity myButtonBack">
+        <form action="pick_style2.html">
+          <input type="submit" value="Back"/>
+        </form>
+      </div>
+
+      <div class="w3-bar w2-border w3-opacity myButtonHelp">
+        <form action="help.html">
+          <input type="submit" value="Help!" />
+        </form>
+      </div>
+      <div>
+        <p>
+            <h1>We Recommend  </h1>
+        </p>
+
+      </div>
+
+    </div>
+    <!--
+    <fieldset>
+
+      <h4>Fade</h4>
+      <h5>Great for Fall Season, Most popular!</h5>
+      <form action="fade_style.html">
+        <input type="submit" value="Details" />
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <h4>Undercut</h4>
+      <h5>Great for your current medium length hair!</h5>
+      <form action="undercut_style.html">
+        <input type="submit" value="Details" />
+      </form>
+    </fieldset>-->
+  </body>
+
+  <!-- handlebars template -->
+  <script id="entry-template" type="text/x-handlebars-template">
+		<div class="project" id="project{{index}}">
+      <fieldset>
+        <img src="{{image}}" alt="image soon to come" class="img" height="150" width="150">
+				<p><h3>{{name}}</h3></p>
+
+          <b>
+            Barber Instructions <br />
+          </b>
+          {{description1}} <br />
+          {{description2}}<br />
+          {{description3}}<br />
+          {{description4}}<br />
+          {{description5}}<br />
+
+        <form action="products.html">
+          <input type='hidden' name='style' value='{{name}}' />
+          <input type="submit" value="Details" />
+        </form>
+      </fieldset>
+
+		</div>
+  </script>
+
+  <!-- the actual place where we inject html -->
+  <div id="templatedProjects">
+      <!-- we will inject templated project HTML code into here -->
+  </div>
+
+
+
+
+
+  <script src="handlebars-v4.0.12.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <script>
+    //used to get the response from previous page and then populate the handle bars thing
+    function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+    }
+    var first = getUrlVars()["size"];
+    var length = getUrlVars()["length"];
+
+    //hair style data
+    var complexData = [
+    {'image':'images/style/croppedfringe.jpg','name': 'Cropped Fringe', 'index': 2, 'description1': '-Style can change with shortness of sides (ex. Skin fade)', 'description2':'-Skin fade or #½ for sides', 'description3':'-Slight trim on top', 'description4':'-Ask for volume', 'length':'Short'},
+    {'image':'images/style/buzzcut.jpg','name': 'Buzz Cut', 'index': 3, 'description1': '-Skin fade on sides', 'description2':'-Even buzz on top', 'length':'Short'},
+    {'image':'images/style/texturedcut.jpg','name': 'Textured Cut',  'index': 4, 'description1': '-Style can change with shortness of sides (ex. Skin fade)', 'description2':'-Skin fade or #½ for sides', 'description3':'-Slight trim on top', 'description4':'-Ask for volume', 'description5':'-Use gel to create texture evenly', 'length':'Short'},
+    {'image':'images/style/loosepompadour.jpg','name': 'Loose Pompadour',  'index': 5, 'description1': '-Fade with #1/2/skin fade', 'description2':'-Comb the top to the side, towards the back', 'description3':'-Use gel to create volume', 'length':'Medium'},
+    {'image':'images/style/spikymodernundercut.jpg','name': 'Spiky Modern Undercut',  'index': 7, 'description1': '-Fade with #1/2/skin fade', 'description2':'-Medium trim on top', 'description3':'-Use water spray to wet the top a little', 'description4':'-Use gel to create messiness/volume', 'length':'Medium'},
+    {'image':'images/style/classicpompadour.jpg','name': 'Classic Pompadour', 'index': 17, 'description1': '-Fade with #1/2/skin fade', 'description2':'-Very little trim on top', 'description3':'-Comb to the side', 'description4':'-Use gel to hold', 'length':'Medium'},
+    {'image':'images/style/mediumnaturalflow.jpg','name': 'Medium Length Natural Flow', 'index': 8, 'description1': '-Fade with #3', 'description2':'-Thin out a little on top', 'description3':'-Comb to the side, towards the back', 'description4':'-Use gel to hold', 'length':'Medium'},
+    {'image':'images/style/sidepartcombover.jpg','name': 'Side Part Combover',  'index': 9, 'description1': '-Medium Sides', 'description2':'-Thin out a little on top', 'description3':'-Comb to the side', 'description4':'-Use gel to hold', 'length':'Medium'},
+    {'image':'images/style/messymedium.jpg','name': 'Messy Medium Length', 'index': 10, 'description1': '-Medium Sides', 'description2':'-Thin out a little on top', 'description3':'-Use the water spray to wet the top a little', 'description4':'-Use wax to create messiness', 'length':'Medium'},
+    {'image':'images/style/slickedbackcut.jpg','name': 'Slicked Back Cut', 'index': 11, 'description1': '-Part one side for hair shift', 'description2':'-Create a division for the sides to be tapered ', 'description3':'-Comb and even the back', 'description4':'-Use gel for clean slicked looks', 'length':'Long'},
+    {'image':'images/style/longfringehaircut.jpg','name': 'Long Fringe Haircut', 'index': 12, 'description1': '-Create a line from both sides to a dip in the back', 'description2':'-Fade with #1/2', 'description3':'-Leave the top hair longer', 'description4':'-Use gel or wax for clean/messy look', 'length':'Long'},
+    {'image':'images/style/longhairundercut.jpg','name': 'Long Hair Undercut',  'index': 13, 'description1': '-Fade one side with #1/2', 'description2':'-Taper both sides with #1/2', 'description3':'-Comb over the long hair layering it until the edge of the face or shorter', 'description4':'-Use gel to create clean finish', 'length':'Long'},
+    {'image':'images/style/modernpompadour.jpg','name': 'Modern Pompadour', 'index': 14, 'description1': '-Buzz the sides with #1/2', 'description2':'-Taper upwards Long or Short', 'description3':'-Allow the top hair to lay flat', 'description4':'-Use wax for a strong hold', 'length':'Long'},
+    {'image':'images/style/flattop.jpg','name': 'Flat Top', 'index': 15, 'description1': '-Create short sides with #0/1', 'description2':'-Create volume by pulling hair up', 'description3':'-Shape to a desired top shape', 'description4':'-Use hair styling for hold', 'length':'Long'},
+    {'image':'images/style/lighttaperedfadecut.jpg','name': 'Light Tapered Fade Cut', 'index': 16, 'description1': '-Pull the whole hair backwards and tie it', 'description2':'-Taper lightly on top and back', 'description3':'-Cut the long hair to a desired length', 'description4':'-Blow dry to create volume', 'length':'Long'}
+
+    ]
+
+
+    $(document).ready(function() {
+      console.log('hello world');
+      // compile the template
+      var source   = $("#entry-template").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#templatedProjects");
+
+      // now iterate through the complexData list and keep appending:
+      for (var i = 0; i < complexData.length; i++) {
+        var curData = complexData[i];
+        if(curData['length'] == length){
+          var curHtml = template(curData);
+          parentDiv.append(curHtml);
+        }
+
+      }
+      $(".hello").click(function(event) {
+        var id = event.target.id;
+        $("#"+id).html('Save');
+
+
+
+      });
+    });
+
+
+
+    $("#fave").click(function() {
+    var newName = prompt("What's your new name?");
+
+
+  });
+
+  </script>
+</html>
