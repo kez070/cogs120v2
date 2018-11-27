@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+h2 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<style>
+.center {
+    float: left;
+}
+.myButtonBack {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: left;
+
+}
+
+.myButtonHelp {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: right;
+}
+
+.div1 {
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+}
+
+</style>
+
   <head>
     <title>Help!</title>
   </head>
   <style>
   .center {
-
       display: block;
       margin-left: auto;
       margin-right: auto;
-
   }
-
-
   </style>
-  <body>
 
     <body>
-      <div class="logo">
+      <div class="logos w3-bar w2-border">
         <a href='new_home.html'>
-          <img src="images/logo.png" alt="logo" style="width:100px;height:100px;padding:10px" class='center'>
+          <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+          <form action="new_home.html" class="w3-opacity">
+            <input type="submit" value="Back"/>
+          </form>
         </a>
       </div>
-    <div>
-      <button onclick="goBack()">Go Back</button>
-    </div>
+
 
 
     <script>
@@ -32,34 +72,34 @@
         window.history.back();
     }
     </script>
-    <h1>Help!</h1>
 
-    <h4> Hair Troubles - A selction of what type of treatments and products
-        <br> that can be benefitial to your specfic need! </h4>
-    <h4> Pick a Style! - A selection of hairstyles that lists barber instructions
-        <br> and recommended products! </h4>
+
+    <center>
+    <h1>Help Page</h1>
 
     <hr>
-
-    <h4> Pre-screening page - Your information will never be distributed to others!
-      <br> The information allows us to carefully choose the best fitting hairstyles for you! </h4>
+    <h3> Pick a Style! - A selection of hairstyles that lists barber instructions
+         and recommended products! </h3>
+    <h3> Hair Troubles - A selction of what type of treatments
+        that can be benefitial to your specfic need! </h3>
+    <hr>
+    <h3> Pre-screening page - Your information will never be distributed to others!
+      <br> The information allows us to carefully choose the best fitting hairstyles for you! </h3>
 
     <hr>
-
-    <h3> Stuck on hair texture? </h3>
-    (show information about how to determine)
-
-    <hr>
+    <h3>
     Not able to find the hairstyle you want?
     Don’t worry let us know and we will help you directly with more information!
     Looking for more hair trouble tips or areas we didn’t cover?
     Let us know!
+    </h3>
     <hr>
 
-    <h2>Contact <br>
+    <h2>Contact
+    <br>
     123-456-7891
+    <br>
     Teammanagement@hair4u.com
-    Hello!
-
+    </center>
   </body>
 </html>

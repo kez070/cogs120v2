@@ -1,29 +1,89 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+h2 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<style>
+.center {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.myButtonBack {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: left;
+
+}
+
+.myButtonHelp {
+    padding: 10px;
+    display:block;
+    background-color: white;
+    color: white;
+    text-align:center;
+    position: auto;
+    float: right;
+}
+
+.div1 {
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+}
+
+</style>
+
   <head>
   <title> Login Now! </title>
   </head>
   <body>
     <center>
-      <h2> LOGIN HERE </h2>
+      <div class="w3-padding-64 center">
+      <h1 class=""> LOGIN HERE </h1>
+      <div class="w3-padding-64 div1 center">
       <form action="new_home.html" >
+        <fieldset>
+          <br>
           <table>
             <tr>
-              <td> Username : </td>
+              <td><h3> Username : </h3></td>
               <td>
+                <div class="w3-padding-32">
                 <input id='user' type="text" name="user">
+                </div>
               </td>
+
+
 
             </tr>
               <tr>
-                <td> Password : </td>
+                <td><h3> Password : </h3></td>
                 <td>
                   <input id='pass' type="password" name="pass">
               </tr>
           </table>
-          <button id='hello' type='button' id='submit'>Login</button>
-      </form>
+          <div class="w3-padding-32">
+          <button id='hello' type='button' id='submit'><h4>Login</h4></button>
+        </div>
     </center>
+        </fieldset>
+      </div>
 
 
   </body>
