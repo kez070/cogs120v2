@@ -87,7 +87,7 @@
     }
     </script>
 
-    <button onclick="complete()" style="float: right;">See Your Completed Hairstyle Regime</button>
+
 
     <script>
     function getUrlVars() {
@@ -112,7 +112,9 @@
     </script>
     <h1>Products to Consider<h1>
     <p>Choose Some Products For Your Favorites List!</p>
-
+    <div class="w3-bar w2-border w3-opacity myButtonBack">
+      <button id="favorites" onclick="complete()" style="float: left;" >Go To Your Favorites</button>
+    </div>
     <div class="tab">
       <button class="tablinks" id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
       <button class="tablinks" onclick="openCity(event, 'sprays')">HairSprays</button>
@@ -208,7 +210,7 @@
       document.getElementById("wax").click();
 
       localStorage.clear();
-
+      localStorage.setItem("fave_count", 0);
       // compile the template
       var source   = $("#entry-template").html();
       var template = Handlebars.compile(source);
@@ -247,6 +249,7 @@
         console.log($("#"+id).text());
 
         if($("#"+id).text() =="Add To Favorites") {
+
           $("#"+id).html('Unfavorite');
           window.alert("Added to Favorites!");
           if(localStorage.getItem("favorites")===null) {
@@ -260,6 +263,7 @@
             storedFavorites.push(id);
             localStorage.setItem("favorites", JSON.stringify(storedFavorites));
           }
+
         }
         else {
             $("#"+id).html('Add To Favorites');
