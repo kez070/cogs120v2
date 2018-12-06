@@ -18,38 +18,60 @@
   <style>
   .center {
       float: left;
-
   }
-
   .myButtonBack {
-      padding: 10px;
+      padding: 0px;
       display:block;
-      background-color: white;
+
       color: white;
       text-align:center;
       position: auto;
       float: left;
-
   }
   .myButton {
       padding: 10px;
       display:block;
-      background-color: white;
+
       color: white;
-
       float: left;
-
   }
-
   .myButtonHelp {
-      padding: 10px;
+      padding: 0px;
       display:block;
-      background-color: white;
       color: white;
       text-align:center;
       position: auto;
       float: left;
   }
+  .padding {
+    padding-bottom: 10px;
+  }
+
+  body {
+    background-color: #ccccff;
+  }
+
+  .space
+     {
+         margin:5px;
+     }
+
+  .givewidth {
+    width: 240px;
+  }
+  .givewidth2 {
+    width: 240px;
+  }
+
+  .tab {
+   overflow: hidden;
+   border: 1px solid gray ;
+   background-color: #E3E3F7;
+ }
+ .putheight {
+   height: 20px;
+ }
+
   </style>
 
   <body>
@@ -64,17 +86,17 @@
           </div>
 
       </a>
-
-      <div class="w3-bar w2-border w3-opacity myButtonBack">
-        <button onclick="goBack()">Go Back</button>
+      <h6>
+      <div class="w3-bar w2-border w3-opacity myButtonBack space">
+        <button onclick="goBack()">Back</button>
       </div>
 
-      <div class="w3-bar w2-border w3-opacity myButtonHelp">
+      <div class="w3-bar w2-border w3-opacity myButtonHelp space">
         <form action="help.html">
-          <input type="submit" value="Help!" />
+          <input type="submit" value="Help" />
         </form>
       </div>
-
+    </h6>
       <!-- LOGO -->
 
     </div>
@@ -97,8 +119,6 @@
       });
       return vars;
     }
-
-
     function complete() {
       if(localStorage.getItem("favorites")===null){
         window.alert("Choose some Favorites!");
@@ -110,14 +130,16 @@
       }
     }
     </script>
-    <h1>Products to Consider<h1>
-    <p>Choose Some Products For Your Favorites List!</p>
-    <div class="w3-bar w2-border w3-opacity myButtonBack">
-      <button id="favorites" onclick="complete()" style="float: left;" >Go To Your Favorites</button>
+    <h1>Products to Consider <p>
+    Add products to your Favorite List!</h1>
+    <div class="w3-bar w2-border w3-opacity myButtonBack padding">
+      <button id="favorites" onclick="complete()" style="float: left;"> <h2>Go To Completed Favorites!</h2></button>
     </div>
-    <div class="tab">
-      <button class="tablinks" id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
-      <button class="tablinks" onclick="openCity(event, 'sprays')">HairSprays</button>
+
+    <div class="tab"><h2>
+      <button class="tablinks givewidth " id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
+      <button class="tablinks givewidth2" onclick="openCity(event, 'sprays')">HairSprays</button>
+      </h2>
     </div>
 
 <!-- Tab content -->
@@ -134,15 +156,17 @@
       <div class="project" id="project{{index}}">
         <fieldset>
           <img src="{{image}}" alt="Lorem Pixel image" class="img" height="150" width="150">
-          <p><h4>{{name}}</h4></p>
+          <p><h3>{{name}}</h3></p>
           <p>
-            <h5>{{description}}</h5>
+            <h4>{{description}}</h4>
           </p>
+          <h3>
           <div class="w3-bar w2-border w3-opacity myButton">
             <button type='button' class='hello' id='{{index}}'>Add To Favorites</button>
             <button onclick=" window.open('{{link}}','_blank')"> Details</button>
 
           </div>
+          </h3>
         </fieldset>
       </div>
     </script>
@@ -169,7 +193,6 @@
     }
     var style = getUrlVars()["style"];
     console.log(style);
-
     //hair style data
     var complexData = [
     {'image':'images/products/gatsbymovingrubber.jpg', 'name': 'Gatsyby Moving Rubber', 'style':'wax', 'link': 'https://amazon.com/gatsby', 'index': 0, 'description': 'good for asian hair!', styles:['Cropped+Fringe','undercut','Long+Fringe+Haircut','Long+Hair+Undercut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut','Slicked+Back+Cut'] },
@@ -179,43 +202,35 @@
     {'image':'images/products/oribe.jpg','name': 'Oribe Hair Spray', 'style':'hairspray', 'link': 'https://www.amazon.com/Oribe-Superfine-Spray-Unisex-Ounce/dp/B00203KP8C/ref=as_at/?creativeASIN=B00203KP8C&linkCode=w50&tag=gqgensqua-20&imprToken=bhvROW07gBF6lvLS86D4HA&slotNum=7&th=1', 'index': 4, 'description': 'Ultra dray spray that offers medium hold, but no dampness!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length']},
     {'image':'images/products/americanfiber.jpeg','name': 'American Crew Fiber',  'style':'wax','link': 'https://www.amazon.com/American-Crew-Fiber-3-Oz/dp/B0007CXWC4/ref=sr_1_5_a_it?ie=UTF8&qid=1541727319&sr=8-5&keywords=men+hair+products', 'index': 5, 'description': 'Offers high hold for normal length hair!',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length','Slicked+Back+Cut','Long+Fringe+Haircut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut']},
     {'image':'images/products/loreal.jpg','name': 'LOreal Control Spray',  'style':'hairspray','link': 'https://www.amazon.com/LOreal-Paris-Advanced-Hairstyle-Hairspray/dp/B00ID1I2Z8/ref=sr_1_6_s_it?s=beauty&ie=UTF8&qid=1541728402&sr=1-6&keywords=hair+spray', 'index': 6, 'description': 'An affordable spray that offers quick, strong hold',styles:['Cropped+Fringe','undercut', 'Buzz+Cut','Textured+Cut','Loose+Pompadour','Spiky+Modern+Undercut','Classic+Pompadour','Medium+Length+Natural+Flow','Side+Part+Combover','Messy+Medium+Length','Slicked+Back+Cut','Long+Fringe+Haircut','Modern+Pompadour','Flat+Top','Light+Tapered+Fade+Cut']}
-
     ]
-
     //tabs code
     function openCity(evt, cityName) {
     // Declare all variables
         var i, tabcontent, tablinks;
-
         // Get all elements with class="tabcontent" and hide them
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-
         // Get all elements with class="tablinks" and remove the class "active"
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-
     //used to populate the page with products
     $(document).ready(function() {
       console.log('hello world');
       document.getElementById("wax").click();
-
       localStorage.clear();
       localStorage.setItem("fave_count", 0);
       // compile the template
       var source   = $("#entry-template").html();
       var template = Handlebars.compile(source);
       var parentDiv = $("#templatedProjects");
-
       // now iterate through the complexData list and keep appending:
       for (var i = 0; i < complexData.length; i++) {
         var curData = complexData[i];
@@ -228,7 +243,6 @@
           }
         }
       }
-
       var parentDiv2 = $("#sprays");
       for (var i = 0; i < complexData.length; i++) {
         var curData = complexData[i];
@@ -241,15 +255,11 @@
           }
         }
       }
-
-
       //add functionality to the favorite button
       $(".hello").click(function(event) {
         var id = event.target.id;
         console.log($("#"+id).text());
-
         if($("#"+id).text() =="Add To Favorites") {
-
           $("#"+id).html('Unfavorite');
           window.alert("Added to Favorites!");
           if(localStorage.getItem("favorites")===null) {
@@ -259,28 +269,19 @@
           else {
             var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
             console.log(storedFavorites);
-
             storedFavorites.push(id);
             localStorage.setItem("favorites", JSON.stringify(storedFavorites));
           }
-
         }
         else {
             $("#"+id).html('Add To Favorites');
-
             var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
             console.log(storedFavorites);
             storedFavorites.splice( storedFavorites.indexOf(id), 1 );
             localStorage.setItem("favorites", JSON.stringify(storedFavorites));
-
         }
-
-
       });
-
     });
-
-
   </script>
 
 
