@@ -36,7 +36,7 @@
   .myButtonBack {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
@@ -47,24 +47,12 @@
   .myButtonHelp {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
       float: left;
   }
-  body {
-    background-color: #ccccff;
-  }
-
-  .bordercolor {
-       border: 1px solid black;
-       margin: auto;
-       padding: 20px;
-       text-align: center;
-     }
-
-
   </style>
 
   <body>
@@ -81,24 +69,17 @@
             </div>
 
         </a>
-      <h6>
+
         <div class="w3-bar w2-border w3-opacity myButtonBack">
-          <button onclick="goBack()">Back</button>
+          <button onclick="goBack()">Go Back</button>
         </div>
 
         <div class="w3-bar w2-border w3-opacity myButtonHelp">
           <form action="help.html">
-            <input type="submit" value="Help" />
+            <input type="submit" value="Help!" />
           </form>
         </div>
-      </h6>
-        <div>
 
-          <p>
-              <h1>Your New Hairstyle! </h1>
-          </p>
-
-        </div>
         <!-- LOGO -->
 
       </div>
@@ -114,7 +95,7 @@
 
     <script id="style-template" type="text/x-handlebars-template">
   		<div class="project" id="project{{index}}">
-        <fieldset class="bordercolor">
+        <fieldset>
           <img src="{{image}}" alt="image soon to come" class="img" height="150" width="150">
   				<p><h3>{{name}}</h3></p>
 
