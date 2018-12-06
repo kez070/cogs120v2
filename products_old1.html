@@ -22,7 +22,7 @@
   .myButtonBack {
       padding: 0px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
@@ -53,22 +53,6 @@
          margin:5px;
      }
 
-  .givewidth {
-    width: 240px;
-  }
-  .givewidth2 {
-    width: 240px;
-  }
-
-  .tab {
-   overflow: hidden;
-   border: 1px solid gray ;
-   background-color: #E3E3F7;
- }
- .putheight {
-   height: 20px;
- }
-
   </style>
 
   <body>
@@ -77,23 +61,23 @@
     <div>
     <header class="w3-panel w3-center" style="padding:20px 16px">
       <a href='new_home.html'>
-        <img src="images/slik.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='center'>
           <div>
 
           </div>
 
       </a>
-      <h6>
+
       <div class="w3-bar w2-border w3-opacity myButtonBack space">
-        <button onclick="goBack()">Back</button>
+        <button onclick="goBack()">Go Back</button>
       </div>
 
       <div class="w3-bar w2-border w3-opacity myButtonHelp space">
         <form action="help.html">
-          <input type="submit" value="Help" />
+          <input type="submit" value="Help!" />
         </form>
       </div>
-    </h6>
+
       <!-- LOGO -->
 
     </div>
@@ -128,14 +112,13 @@
     }
     </script>
     <h1>Products to Consider <p>
-    Add products to your Favorite List!</h1>
+    Choose and add products your Favorite List!</h1>
     <div class="w3-bar w2-border w3-opacity myButtonBack">
       <button id="favorites" onclick="complete()" style="float: left;"> <h2>Go To Completed Favorites!</h2></button>
     </div>
-
     <div class="tab"><h2>
-      <button class="tablinks givewidth " id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
-      <button class="tablinks givewidth2" onclick="openCity(event, 'sprays')">HairSprays</button>
+      <button class="tablinks" id='wax' onclick="openCity(event, 'templatedProjects')">Wax</button>
+      <button class="tablinks" onclick="openCity(event, 'sprays')">HairSprays</button>
       </h2>
     </div>
 
