@@ -18,28 +18,28 @@
   <style>
   .center {
       float: left;
+
   }
+
   .myButtonBack {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
       float: left;
+
   }
+
   .myButtonHelp {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
       float: left;
-  }
-
-  body {
-    background-color: #ccccff;
   }
   </style>
 
@@ -56,7 +56,7 @@
           </div>
 
       </a>
-      <h6>
+
       <div class="w3-bar w2-border w3-opacity myButtonBack">
         <form action="issue.html">
           <input type="submit" value="Back"/>
@@ -65,10 +65,10 @@
 
       <div class="w3-bar w2-border w3-opacity myButtonHelp">
         <form action="help.html">
-          <input type="submit" value="Help" />
+          <input type="submit" value="Help!" />
         </form>
       </div>
-      </h6>
+
       <!-- LOGO -->
 
     </div>
@@ -122,7 +122,9 @@
     return vars;
     }
     var issue = getUrlVars()["issue"];
+
     issue_translate = {'hairloss':'Hairloss','dandruff':'Dandruff','lice':"Lice",'dry':'Dry Hair','oily':'Oily Hair','dull':'Dull Hair','damaged':'Damaged Hair/Split Ends'};
+
     $("#issue_name1").text(issue_translate[issue]);
     //hair style data
     var complexData = [
@@ -133,16 +135,23 @@
       {'image':'images/troubles/oilyhair.jpg','name': 'Kerastase Anti Oiliness Shampoo', 'issue':'Oily Hair','link': 'https://www.amazon.com/Homme-Kerastase-Capital-Anti-Oiliness-Shampoo/dp/B01M1JV4PR/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=manlinesskit-20&linkId=21cd0cb339b46d122a16983700a36cfc', 'index': 4, 'description': 'Great for reducing oiliness', 'description1':'Shower once a day', 'description2':'Condition hair less frequently', 'description3':'Blow dry with cool air'},
       {'image':'images/troubles/dullhair.jpg','name': 'Silk18 Treatment For Damaged Hair', 'issue':'Dull Hair','link': 'https://www.amazon.com/Natural-Conditioner-Sulfate-Treatment-Silk/dp/B00L1KFQKC/ref=sr_1_4_a_it?ie=UTF8&qid=1541728076&sr=8-4&keywords=split%2Bends%2Bhair%2Btreatment&th=1', 'index': 5, 'description': 'Conditioner that treats dry, damaged hair!', 'description1':'Try to use less dye products', 'description2':'Wash hair less for natural oil', 'description3':'Use conditioner more frequently'},
       {'image':'images/troubles/damagedhair.jpg','name': 'Silk18 Natural Hair Conditioner', 'issue':'Damaged Hair/Split Ends','link': 'https://www.amazon.com/Natural-Conditioner-Sulfate-Treatment-Silk/dp/B00L1KFQKC/ref=sr_1_4_a_it?ie=UTF8&qid=1541728076&sr=8-4&keywords=split%2Bends%2Bhair%2Btreatment&th=1', 'index': 6, 'description': 'Conditioner that treats dry, damaged hair!', 'description1':'Check your body health and improve', 'description2':'Try not to expose it too much under sun/pool', 'description3':'Avoid using irons or hot blow drying'}
+
     ]
+
     var issueData = [
       {'name': 'Lice', 'description':'eweww'}
     ]
+
+
+
     $(document).ready(function() {
       console.log('hello world');
+
       // compile the template
       var source   = $("#entry-template").html();
       var template = Handlebars.compile(source);
       var parentDiv = $("#templatedProjects");
+
       // now iterate through the complexData list and keep appending:
       for (var i = 0; i < complexData.length; i++) {
         var curData = complexData[i];
@@ -152,5 +161,7 @@
         }
       }
     });
+
+
   </script>
 </html>
