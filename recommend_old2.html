@@ -41,12 +41,6 @@
       position: auto;
       float: left;
   }
-  .bordercolor {
-       border: 1px solid black;
-       margin: auto;
-       padding: 20px;
-       text-align: center;
-     }
 
   body {
     background-color:#ccccff;
@@ -109,7 +103,7 @@
   <!-- handlebars template -->
   <script id="entry-template" type="text/x-handlebars-template">
 		<div class="project" id="project{{index}}">
-      <fieldset class="bordercolor">
+      <fieldset>
         <img src="{{image}}" alt="image soon to come" class="img" height="150" width="150">
 				<p><h3>{{name}}</h3></p>
 
@@ -121,12 +115,11 @@
           {{description3}}<br />
           {{description4}}<br />
           {{description5}}<br />
-        <h6>
+
         <form action="products.html">
           <input type='hidden' name='style' value='{{name}}' />
           <input type="submit" value="Details" />
         </form>
-      </h6>
       </fieldset>
 
 		</div>
