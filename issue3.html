@@ -34,7 +34,7 @@
   .myButtonBack {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
@@ -45,24 +45,12 @@
   .myButtonHelp {
       padding: 10px;
       display:block;
-
+      background-color: white;
       color: white;
       text-align:center;
       position: auto;
       float: left;
   }
-
-  body {
-    background-color: #ccccff;
-  }
-
-  .button1 {
-
-      color: black;
-      border: 2px solid #555555;
-      border-radius: 12px;
-  }
-
   </style>
 
 
@@ -72,14 +60,14 @@
     <div>
     <header class="w3-panel w3-center" style="padding:20px 16px">
       <a href='new_home.html'>
-        <img src="images/slik.png" alt="logo" style="width:120px;height:120px;padding:10px" class='left'>
+        <img src="images/logo.png" alt="logo" style="width:120px;height:120px;padding:10px" class='left'>
           <div>
 
           </div>
 
       </a>
-      <h6>
-      <div class="w3-bar w3-border button1 w3-opacity myButtonBack">
+
+      <div class="w3-bar w2-border w3-opacity myButtonBack">
         <form action="new_home.html">
           <input type="submit" value="Back"/>
         </form>
@@ -87,10 +75,10 @@
 
       <div class="w3-bar w2-border w3-opacity myButtonHelp">
         <form action="help.html">
-          <input type="submit" value="Help" />
+          <input type="submit" value="Help!" />
         </form>
       </div>
-    </h6>
+
       <!-- LOGO -->
 
     </div>
@@ -98,11 +86,13 @@
 
 <center>
     <h1 >
-      What's the Issue?</h1>
-    <br>
+      Whats the Issue?</h1>
+    <p>
+
+      Choose an Issue</p>
     </Center>
 
-    <h4>
+
     <div class="btn-group w3-bar w2-border w3-opacity myButtonHelp" class='center'>
       <button class='center' id='hairloss'>Hair Loss</button>
       <button class='center'id='dandruff'>Dandruff</button>
@@ -112,7 +102,6 @@
       <button class='center'id='dull'>Dull Hair</button>
       <button class='center'id='damaged'>Damaged Hair/Split Ends</button>
     </div>
-  </h4>
 
     <!-- script to enable buttons -->
     <script type="text/javascript">
